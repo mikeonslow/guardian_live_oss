@@ -1,0 +1,20 @@
+###################################################################################################################################################
+# Describes information about the project you are working on. The name will determine what the module name is for each file. Spaces will be removed
+###################################################################################################################################################
+
+project = [
+			name: "customers.ex",
+			destination: "apps/cbs_eng/schema"
+		  ]
+
+#######################################################################################################################################################
+# Enter the database information for the DB you're connecting to. The driver version has to correspond to the ODBC driver version for your MySQL driver
+#######################################################################################################################################################
+
+database = [
+			server: "dev.clarityvoice.com",
+      port: "3306", 
+			database_name: "cbs",
+			username: "cbs",
+			password: "Nasl42lwsk"
+		  ]

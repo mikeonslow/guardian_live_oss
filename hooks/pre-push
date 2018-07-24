@@ -1,0 +1,8 @@
+#!/bin/bash
+
+commits=`git log @{u}..`
+if [ -z "$commits" ]; then
+    exit 0
+fi
+
+make

@@ -1,0 +1,8 @@
+#!/bin/bash
+rslt=$(git diff --cached --name-only | awk '{ print $1 }')
+if [ -z "$rslt" ]
+then
+    echo 'Nothing to commit'
+    exit 1
+fi
+make

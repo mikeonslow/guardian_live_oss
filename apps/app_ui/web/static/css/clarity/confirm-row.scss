@@ -1,0 +1,30 @@
+@-webkit-keyframes expandDown {
+  0% {
+    opacity:1;
+    height: 0px;
+  }
+  100% {
+    opacity:1;
+    height: 27px;
+  }
+}
+@-moz-keyframes expandDown {
+  0% {
+    opacity:1;
+    height: 0px;
+  }
+  100% {
+    opacity:1;
+    height: 27px;
+  }
+}
+@keyframes expandDown {
+  0% {
+    opacity:1;
+    height: 0px;
+  }
+  100% {
+    opacity:1;
+    height: 27px;
+  }
+}

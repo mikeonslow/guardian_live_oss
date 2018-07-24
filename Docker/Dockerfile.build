@@ -1,0 +1,40 @@
+FROM ubuntu:16.04
+
+ENV LANG en_US.UTF-8
+
+MAINTAINER Dmitri Skliarov <dskliarov@gmail.com>
+
+RUN apt-get update
+RUN apt-get install curl git wget -y
+RUN mkdir ~/dev
+RUN wget https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_20.1-1~ubuntu~xenial_amd64.deb 
+RUN wget https://packages.erlang-solutions.com/erlang/elixir/FLAVOUR_2_download/elixir_1.6.0-1~ubuntu~artful_amd64.deb
+RUN apt-get -f install libwxbase3.0-0v5 libwxgtk3.0-0v5 libsctp1 -y
+RUN dpkg -i esl-erlang_20.1-1~ubuntu~xenial_amd64.deb
+RUN dpkg -i elixir_1.6.0-1~ubuntu~artful_amd64.deb
+RUN apt-get update
+RUN apt-get install build-essential make esl-erlang elixir -y
+
+CMD '/bin/bash'
+
+# Install Hex+Rebar
+RUN mix local.hex --force && \
+    mix local.rebar --force
+
+WORKDIR /opt/app
+
+ENV MIX_ENV=prod
+
+# Cache elixir deps
+RUN mkdir config
+COPY config/* config/
+COPY mix.exs mix.lock ./
+RUN mix do deps.get --only prod, deps.compile
+
+COPY . .
+
+RUN mix deps.clean eleveldb
+
+RUN mix deps.get eleveldb
+
+RUN mix release --env=prod --verbose

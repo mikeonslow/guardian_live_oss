@@ -1,0 +1,94 @@
+[
+  {
+    "name": "Views.Dashboard",
+    "comment": " Module for a dashboard view, that shows widgets in a grid and handles the modal states.\n\n\n# Data\n\n@docs Data, init\n\n\n# Update\n\n@docs Msg, update, openDetail, closeDetail, modalTagger\n\n\n# Rendering\n\n@docs Row, row, Col, col, Widget, view\n\n",
+    "aliases": [
+      {
+        "name": "Widget",
+        "comment": " Represents a widget in the dashboard.\n",
+        "args": [
+          "identifier",
+          "msg"
+        ],
+        "type": "{ id : identifier , content : Html.Html msg , modal : Bootstrap.Modal.Config msg }"
+      }
+    ],
+    "types": [
+      {
+        "name": "Col",
+        "comment": " Opaque type that represents a column for a widget.\n",
+        "args": [
+          "id",
+          "msg"
+        ],
+        "cases": []
+      },
+      {
+        "name": "Data",
+        "comment": " Opaque type representing the state of the dashboard.\n",
+        "args": [],
+        "cases": []
+      },
+      {
+        "name": "Msg",
+        "comment": " Opaque type for updating dashboard data.\n",
+        "args": [
+          "id"
+        ],
+        "cases": []
+      },
+      {
+        "name": "Row",
+        "comment": " Opaque type that represents a row of widget columns.\n",
+        "args": [
+          "id",
+          "msg"
+        ],
+        "cases": []
+      }
+    ],
+    "values": [
+      {
+        "name": "closeDetail",
+        "comment": " Close a detailed view of a widget.\n",
+        "type": "id -> Views.Dashboard.Msg id"
+      },
+      {
+        "name": "col",
+        "comment": " Create a column for rendering a widget.\n\n    col [ Col.xs12 ] myWidget\n\n",
+        "type": "List (Bootstrap.Grid.Col.Option msg) -> Views.Dashboard.Widget id msg -> Views.Dashboard.Col id msg"
+      },
+      {
+        "name": "init",
+        "comment": " Initialize dashboard data.\n",
+        "type": "Views.Dashboard.Data"
+      },
+      {
+        "name": "modalTagger",
+        "comment": " Used for converting a modal state to a Msg.\n",
+        "type": "id -> Bootstrap.Modal.State -> Views.Dashboard.Msg id"
+      },
+      {
+        "name": "openDetail",
+        "comment": " open a widget model to expand into detail view.\n",
+        "type": "id -> Views.Dashboard.Msg id"
+      },
+      {
+        "name": "row",
+        "comment": " Create a row of columns.\n\n    row [] [ col [ Col.xs3 ] myWidget ]\n\n",
+        "type": "List (Bootstrap.Grid.Row.Option msg) -> List (Views.Dashboard.Col id msg) -> Views.Dashboard.Row id msg"
+      },
+      {
+        "name": "update",
+        "comment": " Update data based on a message.\n",
+        "type": "Views.Dashboard.Msg id -> Views.Dashboard.Data -> Views.Dashboard.Data"
+      },
+      {
+        "name": "view",
+        "comment": " Render a grid of widgets.\n\n    view []\n        [ row [] [ col [ Col.xs3 ] myWidget ] ]\n        data\n\n",
+        "type": "List (Html.Attribute msg) -> List (Views.Dashboard.Row id msg) -> Views.Dashboard.Data -> Html.Html msg"
+      }
+    ],
+    "generated-with-elm-version": "0.18.0"
+  }
+]
