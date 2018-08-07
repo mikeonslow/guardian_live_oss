@@ -13,7 +13,7 @@ config :logger, level: :info
 config :auth, Auth.Repo,
   adapter: Ecto.Adapters.MySQL,
   username: "root",
-  password: "123",
+  password: "Clarity32@",
   database: "app",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox,

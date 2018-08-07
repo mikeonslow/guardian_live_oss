@@ -4,7 +4,7 @@ use Mix.Config
 config :auth, Auth.Repo,
   adapter: Ecto.Adapters.MySQL,
   username: "root",
-  password: "123",
+  password: "Clarity32@",
   database: "app",
   hostname: "localhost",
   pool_size: 2

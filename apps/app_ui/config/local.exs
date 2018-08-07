@@ -44,7 +44,7 @@ config :phoenix, :stacktrace_depth, 20
 config :app_ui, Auth.Repo,
   adapter: Ecto.Adapters.MySQL,
   username: "root",
-  password: "123",
+  password: "Clarity32@",
   database: "test",
   hostname: "localhost",
   pool_size: 10
