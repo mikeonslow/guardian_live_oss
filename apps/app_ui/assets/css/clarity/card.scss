@@ -1,0 +1,23 @@
+.card {
+  &.contact {
+
+    .card-block {
+      padding: 1px;
+    }
+
+    .contact-header {
+      background-color: orange;
+      padding: 15px;
+      color: white;
+      margin-bottom: 5px;
+    }
+
+    .card-text {
+      padding-left: 15px;
+    }
+
+    .fa-external-link {
+      cursor: pointer;
+    }
+  }
+}

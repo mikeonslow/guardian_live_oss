@@ -18,9 +18,9 @@ data/*
 erl_crash.dump
 
 # Static artifacts
-*/node_modules
-*/npm-debug.log
-*/yarn*
+node_modules/
+npm-debug.log
+yarn/
 
 # Since we are building assets from web/static,
 # we ignore priv/static. You may want to comment

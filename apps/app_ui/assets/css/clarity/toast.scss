@@ -1,0 +1,120 @@
+.toast-container {
+  width: 400px;
+  max-width: 95vw;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  pointer-events: none;
+}
+
+.toast {
+  position: absolute;
+  right: 0;
+  background: #000;
+  max-width: 95vw;
+  padding: 15px 10px;
+  font-family: sans-serif;
+  font-size: 12px;
+  border-radius: 3px;
+  color: #fff;
+  opacity: 0.0;
+  -webkit-box-shadow: 2px 4px 10px -1px rgba(0,0,0,0.63);
+  -moz-box-shadow: 2px 4px 10px -1px rgba(0,0,0,0.63);
+  box-shadow: 2px 4px 10px -1px rgba(0,0,0,0.63);
+
+  .fa {
+    margin-right: 5px;
+  }
+
+  &.info {
+    .fa {
+      color: #4fa4ef;
+    }
+  }
+
+  &.success {
+    .fa {
+      color: #18a313;
+    }
+  }
+
+  &.warning {
+    .fa {
+      color: #f4d942;
+    }
+  }
+
+  &.danger {
+    .fa {
+      color: #f00;
+    }
+  }
+
+  &.display-and-fade {
+    -webkit-animation:displayAndFade 10s;
+    -webkit-animation-delay:0s;
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation:displayAndFade 10s;
+    -moz-animation-delay: 0s;
+    -moz-animation-fill-mode:forwards;
+    animation:displayAndFade 10s;
+    animation-delay: 0s;
+    animation-fill-mode:forwards;
+  }
+
+}
+
+@-webkit-keyframes displayAndFade {
+  0% {
+    opacity:0;
+    top: -80px;
+  }
+  5% {
+    opacity:1;
+    top: 10px;
+  }
+  80% {
+    opacity:1;
+    top: 10px;
+  }
+  100% {
+    opacity:0;
+    top: 10px;
+  }
+}
+@-moz-keyframes displayAndFade {
+  0% {
+    opacity:0;
+    top: -100px;
+  }
+  10% {
+    opacity:1;
+    top: 10px;
+  }
+  80% {
+    opacity:1;
+    top: 10px;
+  }
+  100% {
+    opacity:0;
+    top: 10px;
+  }
+}
+@keyframes displayAndFade {
+  0% {
+    opacity:0;
+    top: -100px;
+  }
+  5% {
+    opacity:1;
+    top: 10px;
+  }
+  80% {
+    opacity:1;
+    top: 10px;
+  }
+  100% {
+    opacity:0;
+    top: 10px;
+  }
+}
